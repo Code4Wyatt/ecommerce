@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "../src/lib/commerce";
 import { Products, Navbar, Cart, Checkout } from "./components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -70,13 +70,22 @@ const App = () => {
   console.log(cart);
 
   return (
-    <Router>
+ 
       <div>
-        <Navbar totalItems={cart.total_items} />
-        {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-        <Cart cart={cart} />
+      <Navbar totalItems={cart.total_items} />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Products products={products} onAddToCart={handleAddToCart} />
+          </Route>
+          <Route exact path="/cart">
+             <Cart cart={cart} />
+          </Route>
+       </Switch>
+       </Router>
+      
       </div>
-    </Router>
+ 
   );
 };
 
