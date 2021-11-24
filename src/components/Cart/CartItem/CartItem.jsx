@@ -3,12 +3,12 @@ import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@
 
 import useStyles from './styles';
 
-const CartItem = ({ item, onUpdateCartQty, renderEmptyCart }) => {
+const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   const classes = useStyles();
 
   const handleUpdateCartQty = (lineItemId, newQuantity) => onUpdateCartQty(lineItemId, newQuantity);
 
-  const handleRemoveFromCart = (lineItemId) => renderEmptyCart(lineItemId);
+  const handleRemoveFromCart = (lineItemId) => onRemoveFromCart(lineItemId);
 
   return (
     <Card className="cart-item">
@@ -23,7 +23,7 @@ const CartItem = ({ item, onUpdateCartQty, renderEmptyCart }) => {
           <Typography>&nbsp;{item.quantity}&nbsp;</Typography>
           <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
         </div>
-        <Button variant="contained" type="button" color="secondary" onClick={() => renderEmptyCart(item.id)}>Remove</Button>
+        <Button variant="contained" type="button" color="secondary" onClick={() => onRemoveFromCart(item.id)}>Remove</Button>
       </CardActions>
     </Card>
   );
