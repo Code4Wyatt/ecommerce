@@ -71,8 +71,9 @@ const App = () => {
 
   return (
  
+      
+    <Router>
       <div>
-      <Router>
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
@@ -81,10 +82,14 @@ const App = () => {
           <Route exact path="/cart">
             <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
           </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
        </Switch>
+       </div>
        </Router>
       
-      </div>
+      
  
   );
 };
