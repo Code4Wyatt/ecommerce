@@ -15,17 +15,18 @@ const Checkout = ({ cart }) => {
     useEffect(() => {
         const generateToken = async () => {
             try {
-                const token = commerce.checkout.generateToken(cart.id, { type: 'cart' });
-                
-                console.log(token);
+                const response = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
+               
 
-                setCheckoutToken(token);
+                console.log(response);
+
+                setCheckoutToken(response);
             } catch (error) {
-
+                console.log(error)
             }
         }
         generateToken();
-    }, [])
+    }, [cart])
 
     const Confirmation = () => (
         <div>Confirmation</div>
