@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
+    backgroundColor: '#3d3d3d',
   },
   button: {
     position: 'fixed',
@@ -21,9 +22,15 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
+    color: 'white',
+    right: '20px',
+    marginLeft: '10px',
+    marginTop: '5px'
   },
   image: {
-    marginRight: '10px',
+    right: '30px',
+    marginRight: '15px',
+    marginLeft: '5px'
   },
   menuButton: {
     marginRight: theme.spacing(2),
