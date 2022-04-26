@@ -24,7 +24,7 @@ const Navbar = ({ totalItems }) => {
           to="/"
           variant="h6"
           className={classes.title}
-          style={{color: '#ffbc12'}}
+          style={{color: 'black'}}
         >
           <img
             src={logo}
@@ -44,7 +44,7 @@ const Navbar = ({ totalItems }) => {
               color="inherit"
             >
               <Badge badgeContent={totalItems} color="secondary">
-                <ShoppingCart style={{color: 'white', marginTop: '5px'}}/>
+                <ShoppingCart style={{color: 'black', marginTop: '5px'}}/>
               </Badge>
             </IconButton>
           </div>

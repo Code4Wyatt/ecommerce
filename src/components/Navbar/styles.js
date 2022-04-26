@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
-    backgroundColor: '#3d3d3d',
+    backgroundColor: 'transparent',
   },
   button: {
     position: 'fixed',
